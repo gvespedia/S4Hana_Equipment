@@ -1,0 +1,74 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z_GV_PM_NOTIF_SRV" xml:lang="it" sap:schema-version="1">
+            <EntityType Name="Notifications" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Qmnum"/>
+                </Key>
+                <Property Name="Qmnum" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Avviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmart" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Tipo avviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmdat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Data avviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmnam" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Autore avviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmtxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Descrizione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatusCodes" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Stato avviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmsttxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Stato avviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Objnr" Type="Edm.String" Nullable="false" MaxLength="22" sap:label="Numero oggetto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Equnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Equipment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Ordine" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Parnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Partner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="Nome" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NotifEqui" Relationship="Z_GV_PM_NOTIF_SRV.NotificationEquipment" FromRole="FromRole_NotificationEquipment" ToRole="ToRole_NotificationEquipment"/>
+            </EntityType>
+            <EntityType Name="Equipment" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Equnr"/>
+                </Key>
+                <Property Name="Equnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Equipment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Eqtyp" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Cat. equipm." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Eqart" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Tipo di oggetto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Invnr" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="N. invent." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Groes" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Grand./dimens." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Brgew" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unit="Gewei" sap:label="Peso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Gewei" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Unità di peso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Serge" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="N. serie prod." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aplkz" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Ciclo manut." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Objnr" Type="Edm.String" Nullable="false" MaxLength="22" sap:label="Numero oggetto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Eqsnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Numero" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kmatn" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Mat. config." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Materiale" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sernr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Numero di serie" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Werk" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Divisione" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lager" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Magazzino" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NotificationsSet" Relationship="Z_GV_PM_NOTIF_SRV.NotificationEquipment" FromRole="ToRole_NotificationEquipment" ToRole="FromRole_NotificationEquipment"/>
+            </EntityType>
+            <Association Name="NotificationEquipment" sap:content-version="1">
+                <End Type="Z_GV_PM_NOTIF_SRV.Notifications" Multiplicity="*" Role="FromRole_NotificationEquipment"/>
+                <End Type="Z_GV_PM_NOTIF_SRV.Equipment" Multiplicity="0..1" Role="ToRole_NotificationEquipment"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_NotificationEquipment">
+                        <PropertyRef Name="Qmnum"/>
+                    </Principal>
+                    <Dependent Role="ToRole_NotificationEquipment">
+                        <PropertyRef Name="Equnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="Z_GV_PM_NOTIF_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="NotificationsSet" EntityType="Z_GV_PM_NOTIF_SRV.Notifications" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="EquipmentSet" EntityType="Z_GV_PM_NOTIF_SRV.Equipment" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="NotificationEquipmentSet" Association="Z_GV_PM_NOTIF_SRV.NotificationEquipment" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="NotificationsSet" Role="FromRole_NotificationEquipment"/>
+                    <End EntitySet="EquipmentSet" Role="ToRole_NotificationEquipment"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/opu/odata/SAP/Z_GV_PM_NOTIF_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/opu/odata/SAP/Z_GV_PM_NOTIF_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

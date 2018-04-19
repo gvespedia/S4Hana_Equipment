@@ -1,0 +1,13 @@
+#Password=<< Existing password/certificate removed on export >>
+#
+#Thu Apr 19 10:49:14 UTC 2018
+Type=HTTP
+Authentication=BasicAuthentication
+WebIDEUsage=odata_gen, odata_abap, bsp_execute_abap, ui5_execute_abap, dev_abap, bsp_execute_abap
+Name=S4_HANA_ESPEDIA
+WebIDEEnabled=true
+ProxyType=OnPremise
+URL=http\://192.168.60.91\:80
+User=espedia
+jco.client.client=100
+WebIDESystem=S4_HANA_ESPEDIA
