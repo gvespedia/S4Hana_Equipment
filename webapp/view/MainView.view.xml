@@ -5,10 +5,11 @@
 			<Page title="{i18n>title}">
 				<content>
 					<List items="{/NotificationsSet}">
-					 	<items>
-					 		<ObjectListItem title="{Qmnum}" intro="{Qmtxt}"></ObjectListItem>
-				 		</items>
-				 	</List>
+						<items>
+
+							<ObjectListItem title="{Qmnum}" intro="{Qmtxt}"></ObjectListItem>
+						</items>
+					</List>
 				</content>
 			</Page>
 		</pages>
