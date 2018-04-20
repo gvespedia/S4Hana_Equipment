@@ -46,7 +46,8 @@
 									<Text text="{OrderNo}"/>
 									<Text text="{ path: 'Notifdate' }"/>
 								</cells>
-							</ColumnListItem>
+								
+							</ColumnListItem> 
 						</items>
 					</Table>
 				</content>
