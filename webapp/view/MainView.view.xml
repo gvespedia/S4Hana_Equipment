@@ -4,12 +4,51 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					<List items="{/NotificationsSet}">
+					<!--<List items="{/BapiNotifSet}">
 						<items>
 
-							<ObjectListItem title="{Qmnum}" intro="{Qmtxt}"></ObjectListItem>
+							<ObjectListItem title="{Notificat}" intro="{Descript}"></ObjectListItem>
 						</items>
-					</List>
+					</List>-->
+					<Table id="equiTab" inset="false" items="{ path: '/BapiNotifSet', sorter: { path: 'Notificat' } }">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="Notifications" level="H2" />
+									<ToolbarSpacer/>
+									<Button text="Debugger" press="onTest" />
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="12em">
+								<Text text="Notification"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Functional Location"/>
+							</Column>
+							<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+								<Text text="Equipment"/>
+							</Column>
+							<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+								<Text text="Order"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="Date"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier title="{Notificat}" text="{Descript}"/>
+									<Text text="{Funcloc}"/>
+									<Text text="{Equipment}"/>
+									<Text text="{OrderNo}"/>
+									<Text text="{ path: 'Notifdate' }"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
 				</content>
 			</Page>
 		</pages>

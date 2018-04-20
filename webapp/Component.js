@@ -25,7 +25,6 @@ sap.ui.define([
 				json: true,
 				loadMetadataAsync: true	
 			});
-			debugger;
 			oModel.attachMetadataFailed(function() {
 			this.getEventBus().publish("Component", "MetadataFailed");
 			}, this);
