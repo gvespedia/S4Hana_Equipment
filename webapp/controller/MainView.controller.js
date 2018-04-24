@@ -6,15 +6,33 @@ sap.ui.define([
 
 	return Controller.extend("com.gv.s4equi.S4Equipment.controller.MainView", {
 		onInit: function() {
-			
+
 		},
-		
+
 		onTest: function(evt) {
 			sap.m.MessageToast.show("Debugger");
 		},
-		
+
 		dateFormatter: function(value) {
 			return "Perchè mai dovrebbe funzionare così?";
+		},
+
+	/*onNavBack: function() {
+			var app = this.byId("idAppControl");
+			var page = this.byId("NotifPage");
+			app.to(page);
+		},*/
+
+		onRowClicked: function(oEvent) {
+			var sPath = oEvent.getParameter("listItem").getBindingContext().sPath;
+
+			var app = this.byId("idAppControl");
+			var page = this.byId("DetailsPage");
+			app.to(page);
+			var header = this.byId("detailsHeader");
+			header.bindElement(sPath + "/ToEqui");
+			//header.setBindingContext(new sap.ui.model.Context(oModel, "/BapiNotifSet('10000143')/ToEqui"));
+			//header.setTitle("{path:'Qmnum'}");
 		}
 	});
 });
