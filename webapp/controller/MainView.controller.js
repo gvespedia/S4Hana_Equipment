@@ -9,20 +9,6 @@ sap.ui.define([
 
 		},
 
-		onTest: function(evt) {
-			sap.m.MessageToast.show("Debugger");
-		},
-
-		dateFormatter: function(value) {
-			return "Perchè mai dovrebbe funzionare così?";
-		},
-
-	/*onNavBack: function() {
-			var app = this.byId("idAppControl");
-			var page = this.byId("NotifPage");
-			app.to(page);
-		},*/
-
 		onRowClicked: function(oEvent) {
 			var sPath = oEvent.getParameter("listItem").getBindingContext().sPath;
 
@@ -31,8 +17,20 @@ sap.ui.define([
 			app.to(page);
 			var header = this.byId("detailsHeader");
 			header.bindElement(sPath + "/ToEqui");
+			debugger;
+			var orderToolbar = this.byId("orderToolbar");
+			orderToolbar.bindElement(sPath + "/ToOrder");
+			var operationsTable = this.byId("operationsTab");
+			operationsTable.bindElement(sPath + "/ToOrder" + "/ToOperation");
 			//header.setBindingContext(new sap.ui.model.Context(oModel, "/BapiNotifSet('10000143')/ToEqui"));
 			//header.setTitle("{path:'Qmnum'}");
+		},
+
+		onNavBack: function() {
+			debugger;
+			var app = this.byId("idAppControl");
+			var page = this.byId("NotifPage");
+			app.to(page, "fade");
 		}
 	});
 });

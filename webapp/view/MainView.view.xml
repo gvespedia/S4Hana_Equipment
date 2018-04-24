@@ -17,7 +17,6 @@
 								<content>
 									<Title text="Notifications" level="H2"/>
 									<ToolbarSpacer/>
-									<Button text="Debugger" press="onTest"/>
 								</content>
 							</Toolbar>
 						</headerToolbar>
@@ -52,10 +51,42 @@
 					</Table>
 				</content>
 			</Page>
-			<Page title="Details" id="DetailsPage">
+			<Page title="Details" id="DetailsPage" showNavButton="true" navButtonPress="onNavBack">
 				<content>
-					<ObjectHeader id="detailsHeader" bindingContexts="{/BapiNotifSet('10000143')/ToEqui}" responsive="true" intro="{path: 'Equnr'}"
-						backgroundDesign="Translucent"></ObjectHeader>
+					<ObjectHeader id="detailsHeader" bindingContexts="{/BapiNotifSet('10000143')/ToEqui}" responsive="true"
+						title="Equipment: {path: 'Equnr'} - {path: 'Eqktx'}" intro="Object Number: {path: 'Objnr'}" backgroundDesign="Translucent"></ObjectHeader>
+					<Toolbar id="orderToolbar">
+						<content>
+							<Title text=" Order: {path: 'Aufnr'} - {path: 'Ktext'}" level="H1"/>
+							<ToolbarSpacer/>
+						</content>
+					</Toolbar>
+					<Table id="operationsTab" inset="false" selectionChange="onRowClicked">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="Operations" level="H2"/>
+									<ToolbarSpacer/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="12em">
+								<Text text="Activity"/>
+							</Column>
+							<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+								<Text text="Work Center"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier title="{path: 'Notificat'}" text="{path: 'Descript'}"/>
+									<Text text="{path: 'WorkCntr'}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
 				</content>
 			</Page>
 		</pages>
