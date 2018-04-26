@@ -17,6 +17,7 @@
 								<content>
 									<Title text="Notifications" level="H2"/>
 									<ToolbarSpacer/>
+									<Button text="Create Notification" press="onCreateNotif" type="Accept" />
 								</content>
 							</Toolbar>
 						</headerToolbar>
