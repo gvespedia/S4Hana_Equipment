@@ -53,15 +53,15 @@
 			</Page>
 			<Page title="Details" id="DetailsPage" showNavButton="true" navButtonPress="onNavBack">
 				<content>
-					<ObjectHeader id="detailsHeader" bindingContexts="{/BapiNotifSet('10000143')/ToEqui}" responsive="true"
-						title="Equipment: {path: 'Equnr'} - {path: 'Eqktx'}" intro="Object Number: {path: 'Objnr'}" backgroundDesign="Translucent"></ObjectHeader>
+					<ObjectHeader id="detailsHeader" responsive="true" title="Equipment: {path: 'Equnr'} - {path: 'Eqktx'}"
+						intro="Object Number: {path: 'Objnr'}" backgroundDesign="Translucent"></ObjectHeader>
 					<Toolbar id="orderToolbar">
 						<content>
-							<Title text=" Order: {path: 'Aufnr'} - {path: 'Ktext'}" level="H1"/>
+							<Title text=" Order: {path: 'Aufnr'} - {path: 'Ktext'}" level="H2"/>
 							<ToolbarSpacer/>
 						</content>
 					</Toolbar>
-					<Table id="operationsTab" inset="false" selectionChange="onRowClicked">
+					<Table id="operationsTab" inset="false">
 						<headerToolbar>
 							<Toolbar>
 								<content>
@@ -78,14 +78,14 @@
 								<Text text="Work Center"/>
 							</Column>
 						</columns>
-						<items>
+						<!--<items>
 							<ColumnListItem>
 								<cells>
-									<ObjectIdentifier title="{path: 'Notificat'}" text="{path: 'Descript'}"/>
+									<ObjectIdentifier title="{path: 'Activity'}"/>
 									<Text text="{path: 'WorkCntr'}"/>
 								</cells>
 							</ColumnListItem>
-						</items>
+						</items>-->
 					</Table>
 				</content>
 			</Page>
