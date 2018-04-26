@@ -92,8 +92,11 @@ sap.ui.define([
 				"OrderNo": "0"
 			}, {
 				success: function(oData) {
-					debugger;
-					sap.m.MessageToast.show("Success!");
+					if (oData.hasOwnProperty("Notificat")) {
+					sap.m.MessageToast.show("Successfully created notification: " + oData.Notificat);
+					} else {
+						sap.m.MessageToast.show("Success");
+					}
 				},
 				error: function(err) {
 					sap.m.MessageBox.alert("Error!");
